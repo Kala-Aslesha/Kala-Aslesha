@@ -1,0 +1,151 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>body{
+        margin:0px;
+        
+    }
+    #header{
+        background-color: #641be1;
+        color:white;
+        text-align:center;
+        margin:0px;
+        padding:0px;
+        height:100px;
+        border-radius:5px;
+    }
+   h2{
+        padding-top:20px;
+        font-size:50px
+    }
+    #navbar{
+        background-color: #a003f5;
+    height:60px;
+    padding-top:20px;
+    }
+    #navbar ul{
+        list-style-type:none;
+        text-align: center;
+       
+    }
+    #navbar ul li{
+        display:inline;
+    }
+    #navbar ul li a{
+        text-decoration:none;
+        background-color:white;
+        color:rgb(56, 47, 169);
+        margin-right:80px;
+        text-transform:capitalize;
+        padding:5px;
+        border-radius: 5px;
+    }
+    #navbar ul li a:hover{
+        background-color: #E11B22;
+        color:white;
+    }
+    .image img{
+        width:100%;
+        height: 515px;
+    }
+    #searchimage img{
+        margin-top:0px;
+        margin-left:10%;
+    }
+    #searchform{
+     text-align: center;
+     color:blue;
+    }
+    #searchform select option{
+    color: blue;
+    }
+    #table h2{
+        text-align: center;
+        color:blue;
+    }
+    #donarform{
+    color:blue;
+    padding-left:100px;
+    padding-right:100px;
+    display:table;
+    border:solid 2px blue;
+    border-radius:5px;
+    margin-left:30%;
+    }
+    .row{
+        display:table-row;
+    }
+    .row label{
+        display:table-cell;
+        padding:2px;
+        text-align: left;
+    }
+    .row input{
+        display:table-cell;
+        padding:2px;
+    }
+    .row select{
+        display:table-cell;
+        padding:2px;
+    }
+    .row textarea{
+        display:table-cell;
+        padding:2px;
+    }
+ #boxes{
+    margin-top:20px;
+  }
+
+  #boxes .box{
+    float:left;
+    text-align: center;
+    width:30%;
+    padding:10px;
+  }
+
+  #boxes .box img{
+    width:50px;
+  }
+    
+    </style>
+    
+</head>
+<body>
+    <div id="header">
+        <h2>Resume Analyzer System</h2>
+        </div>
+        
+        <div id="navbar">
+            <ul>
+                <li><h3 style="color:white">Login Form</h3></li>
+            </ul>
+        </div>
+  
+   <br><br><br><br><br>
+   <div style="float:left;padding-left:140px;width:500px;height:1000px">
+    <img src="https://media.tenor.com/VxkHqXnvdPgAAAAM/positive-vibes.gif" >
+    </div>
+
+
+    
+   <div id="table" style="padding-left: 100px;float:left;width:600px"><br>
+   {% if messages %}
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <button type="submit">Sign In</button>
+    </form>
+</div>
+
+</body>
+</html>
